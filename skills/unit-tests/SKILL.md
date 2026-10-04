@@ -49,7 +49,7 @@ Use this skill when the user:
    - Invoked helper functions and utilities
 5. Repeat tracing recursively until **all I/O calls** are mapped.
 6. Produce a **textual flow diagram** before writing any tests:
-
+```
 POST /api/v1/users
 └─ UserController.create(dto)
 └─ UserService.create(dto)
@@ -57,7 +57,7 @@ POST /api/v1/users
 ├─ UserRepository.findByEmail(email) [DATABASE — mock]
 ├─ HashService.hash(password) [pure — test directly]
 └─ UserRepository.save(user) [DATABASE — mock]
-
+```
 7. **Present the map to the user and wait for confirmation** before generating tests.
 If something cannot be traced (missing file, unknown layer), list it under
 "UNMAPPED POINTS" and request clarification.
